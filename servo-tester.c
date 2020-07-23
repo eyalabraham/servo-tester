@@ -1,4 +1,4 @@
-/* baud-gen.c
+/* servo-tester.c
  *
  * Hobby RC servo tester:
  *  1. RC servo PWN generator
