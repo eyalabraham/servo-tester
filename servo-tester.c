@@ -2,7 +2,7 @@
  *
  * Hobby RC servo tester:
  *  1. RC servo PWN generator
- *  2. 'Center' and 'Manual input switch
+ *  2. 'Center' and 'Manual' input switch
  *  3. Analog position input command for manual servo slew
  *
  * When switch is in 'Center' mode, PWM is preset to move servo to
@@ -13,7 +13,7 @@
  *
  *  +-----+
  *  |     |
- *  | AVR +-------> (OC0A) Servo PWM
+ *  | AVR +-------> (OC1A) Servo PWM
  *  |     |
  *  |     +-------< (PA1)  Center/Manual switch
  *  |     |
@@ -72,12 +72,10 @@
 #define     ADCSRA_INIT     0b11101111  // Enable conversion, auto trigger, @ 62.6KHz
 #define     ADCSRB_INIT     0b00010000  // Free running, result is left shifted into ADCH
 
-// Timer1 frequency constants
+// Timer1 constants for PWM
 #define     SERVO_PERIOD    2499        // 20mSec PWM period with Clock Select to Fclk/64
 
-// PWN values
 #define     PWM_INIT        PWM_CENTER
-
 #define     PWM_LOW         123
 #define     PWM_CENTER      184
 #define     PWM_HIGH        246
